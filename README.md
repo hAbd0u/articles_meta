@@ -16,9 +16,9 @@ Webservices para fornecer metadados de artigos SciELO da Rede SciELO (armazenado
 
 
 ### Como configurar o MONGODB_HOST
-
+Supondo que você já tenha instalado o banco de dados mongo na máquina local.
 ```shell
-    $ docker run --name my-articlemeta -e MONGODB_HOST=my_eshost:27017 -d my-articlemeta my-articlemeta
+    $ docker run --name my-articlemeta -e MONGODB_HOST=127.0.0.1:27017 -d scieloorg/articles_meta
 ```
 
 Os serviços ativos nesta imagem são:
@@ -30,7 +30,7 @@ Os serviços ativos nesta imagem são:
 É possível mapear essas portas para o hosting dos containers da seguinte forma:
 
 ```shell
-    $ docker run --name my-articlemeta -e MONGODB_HOST=my_eshost:27017 -p 8000:8000 -p 11620:11620 -d my-articlemeta my-articlemeta
+    $ docker run --name my-articlemeta -e MONGODB_HOST=127.0.0.1:27017 -p 8000:8000 -p 11620:11620 -d scieloorg/articles_meta
 ```
 
 # Como executar comandos de processamentos
